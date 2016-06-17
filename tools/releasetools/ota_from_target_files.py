@@ -647,15 +647,15 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.Unmount("/data")
     script.AppendExtra("endif;")
     
- script.Print("                           )  (     ");
- script.Print("  *   )                 ( /(  )\ )  ");
- script.Print("` )  /(      ) (        )\())(()/(  ");
- script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ");
- script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ");
- script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ");
- script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ");
- script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ");
- script.Print("  Welcome To The World Of Toxic-OS  ");
+ script.Print("                           )  (     ")
+ script.Print("  *   )                 ( /(  )\ )  ")
+ script.Print("` )  /(      ) (        )\())(()/(  ")
+ script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ")
+ script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ")
+ script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ")
+ script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ")
+ script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ")
+ script.Print("  Welcome To The World Of Toxic-OS  ")
  
  if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
