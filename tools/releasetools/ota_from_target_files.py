@@ -620,6 +620,19 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 
+ script.Print("");
+ script.Print("                           )  (     ");
+ script.Print("  *   )                 ( /(  )\ )  ");
+ script.Print("` )  /(      ) (        )\())(()/(  ");
+ script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ");
+ script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ");
+ script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ");
+ script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ");
+ script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ");
+ script.Print("");
+ script.Print("  Welcome To The World Of Toxic-OS  ");
+ script.Print("");
+
   CopyInstallTools(output_zip)
   script.UnpackPackageDir("install", "/tmp/install")
   script.SetPermissionsRecursive("/tmp/install", 0, 0, 0o755, 0o644, None, None)
