@@ -655,7 +655,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.ValidateSignatures("data")
     script.Unmount("/data")
     script.AppendExtra("endif;")
-
+   
  if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
 
