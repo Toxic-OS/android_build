@@ -593,6 +593,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   #    complete script normally
   #    (allow recovery to mark itself finished and reboot)
 
+ 
   recovery_img = common.GetBootableImage("recovery.img", "recovery.img",
                                          OPTIONS.input_tmp, "RECOVERY")
   if OPTIONS.two_step:
@@ -620,18 +621,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
 
- script.Print("                           )  (     ")
- script.Print("  *   )                 ( /(  )\ )  ")
- script.Print("` )  /(      ) (        )\())(()/(  ")
- script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ")
- script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ")
- script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ")
- script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ")
- script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ")
- script.Print("")
- script.Print("  Welcome To The World Of Toxic-OS  ")
- script.Print("")
-
   CopyInstallTools(output_zip)
   script.UnpackPackageDir("install", "/tmp/install")
   script.SetPermissionsRecursive("/tmp/install", 0, 0, 0o755, 0o644, None, None)
@@ -657,8 +646,20 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.ValidateSignatures("data")
     script.Unmount("/data")
     script.AppendExtra("endif;")
-
-  if "selinux_fc" in OPTIONS.info_dict:
+    
+ script.Print("")
+ script.Print("                           )  (     ")
+ script.Print("  *   )                 ( /(  )\ )  ")
+ script.Print("` )  /(      ) (        )\())(()/(  ")
+ script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ")
+ script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ")
+ script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ")
+ script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ")
+ script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ")
+ script.Print("")
+ script.Print("  Welcome To The World Of Toxic-OS  ")
+ script.Print("")
+ if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
 
   recovery_mount_options = OPTIONS.info_dict.get("recovery_mount_options")
