@@ -593,8 +593,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   #    complete script normally
   #    (allow recovery to mark itself finished and reboot)
 
- 
-  recovery_img = common.GetBootableImage("recovery.img", "recovery.img",
+ recovery_img = common.GetBootableImage("recovery.img", "recovery.img",
                                          OPTIONS.input_tmp, "RECOVERY")
   if OPTIONS.two_step:
     if not OPTIONS.info_dict.get("multistage_support", None):
@@ -615,11 +614,20 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 """ % bcb_dev)
 
   # Dump fingerprints
-  #script.Print("Target: %s" % CalculateFingerprint(
-  #    oem_props, oem_dict, OPTIONS.info_dict))
+  script.Print("Target: %s" % CalculateFingerprint(
+      oem_props, oem_dict, OPTIONS.info_dict))
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
   device_specific.FullOTA_InstallBegin()
+ #script.Print("                           )  (     ")
+ #script.Print("  *   )                 ( /(  )\ )  ")
+ #script.Print("` )  /(      ) (        )\())(()/(  ")
+ #script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ")
+ #script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ")
+ #script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ")
+ #script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ")
+ #script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ")
+ #script.Print("  Welcome To The World Of Toxic-OS  ")
 
   CopyInstallTools(output_zip)
   script.UnpackPackageDir("install", "/tmp/install")
@@ -646,17 +654,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     script.ValidateSignatures("data")
     script.Unmount("/data")
     script.AppendExtra("endif;")
-    
- #script.Print("                           )  (     ")
- #script.Print("  *   )                 ( /(  )\ )  ")
- #script.Print("` )  /(      ) (        )\())(()/(  ")
- #script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ")
- #script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ")
- #script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ")
- #script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ")
- #script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ")
- #script.Print("  Welcome To The World Of Toxic-OS  ")
- 
+
  if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
 
