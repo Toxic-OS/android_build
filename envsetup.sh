@@ -527,7 +527,7 @@ function print_lunch_menu()
     done | column
 
     if [ "z${TOXIC_DEVICES_ONLY}" != "z" ]; then
-       echo "... and don't forget the bacon!"
+       echo "... and don't forget the Toxic-os!"
     fi
 
     echo
@@ -2144,7 +2144,7 @@ function cmka() {
     if [ ! -z "$1" ]; then
         for i in "$@"; do
             case $i in
-                bacon|otapackage|systemimage)
+                toxic|otapackage|systemimage)
                     mka installclean
                     mka $i
                     ;;
