@@ -618,13 +618,16 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   #    oem_props, oem_dict, OPTIONS.info_dict))
   script.Print("********************************************");
   script.Print("********************************************");
-  script.Print("  _____         _         ___  ____  ");
-  script.Print(" |_   _|____  _(_) ___   / _ \/ ___| ");
-  script.Print("   | |/ _ \ \/ / |/ __| | | | \___ \ ");
-  script.Print("   | | (_) >  <| | (__  | |_| |___)| ");
-  script.Print("   |_|\___/_/\_\_|\___|  \___/|____/ ");
-  script.Print("                                     ");
+  script.Print("                           )  (     ");
+  script.Print("  *   )                 ( /(  )\ )  ");
+  script.Print("` )  /(      ) (        )\())(()/(  ");
+  script.Print(" ( )(_)|  ( /( )\  (   ((_)\  /(_)) ");
+  script.Print("(_(_()))\ )\()|(_) )\    ((_)(_))   ");
+  script.Print("|_   _((_|(_)\ (_)((_)  / _ \/ __|  ");
+  script.Print("  | |/ _ \ \ / | / _|  | (_) \__ \  ");
+  script.Print("  |_|\___/_\_\ |_\__|   \___/|___/  ");
   script.Print("********************************************");
+  script.Print("        Welcome to the world Of Toxic OS    ");
   script.Print("********************************************");
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
